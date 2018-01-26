@@ -48,7 +48,7 @@ def main():
     print(str(datetime.now()))
 
     parser = DataParser()
-    parser.getDataFromDB('SELECT postid, post FROM public.post order by postid limit 5')
+    parser.getDataFromDB('SELECT postid, post FROM public.post order by postid')
 
 if __name__ == '__main__':
     main()
