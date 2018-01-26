@@ -21,7 +21,7 @@ aws s3 cp s3://mosaic.cdc.parser/cdc-datapipeline.zip cdc-datapipeline.zip
 unzip cdc-data*
 
 # download corenlp
-wget https://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip
+git clone https://github.com/riteshapatel/cdc-datapipeline.git cdc-datapipeline
 
 # unzip and set up corenlp for cdc datapipeline
 unzip stanford-corenlp* 
@@ -32,11 +32,11 @@ cp stanford-corenlp-full-2017-06-09/*.* cdc-datapipeline/parser/corenlp/
 git clone https://github.com/Noahs-ARK/semafor.git cdc-datapipeline/parser/semafor
 
 # replace script in semafor directory
-aws s3 cp s3://mosaic.cdc.parser/config.sh cdc-dataparser/parser/semafor/bin
-aws s3 cp s3://mosaic.cdc.parser/convertConll.sh cdc-dataparser/parser/semafor/bin
+aws s3 cp s3://mosaic.cdc.parser/config.sh cdc-datapipeline/parser/semafor/bin/config.sh
+aws s3 cp s3://mosaic.cdc.parser/convertConll.sh cdc-datapipeline/parser/semafor/bin/convertConll.sh
 
 # download malt models
-curl http://www.ark.cs.cmu.edu/SEMAFOR/semafor_malt_model_20121129.tar.gz
+wget http://www.ark.cs.cmu.edu/SEMAFOR/semafor_malt_model_20121129.tar.gz
 
 
 # unzip corenlp
