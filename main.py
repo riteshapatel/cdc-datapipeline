@@ -18,7 +18,6 @@ def main():
     #         db.insertPost(post)
 
     print(str(datetime.now()))
-    db = Database()
     with jsonlines.open('smaller.jl') as reader:
         for obj in reader:
             website = obj.get("website")
@@ -47,7 +46,7 @@ def main():
             db.insertPost(tid, uid, post, date)
 
     print(str(datetime.now()))
-    
+
     parser = DataParser()
     parser.getDataFromDB('SELECT postid, post FROM public.post order by postid limit 5')
 
