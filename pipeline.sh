@@ -15,17 +15,13 @@ sudo yum -y install git
 rm -Rf cdc-datapipeline 
 
 # download cdc-pipeline from s3 bucket
-aws s3 cp s3://mosaic.cdc.parser/cdc-datapipeline.zip cdc-datapipeline.zip
-
-# unzip pipeline
-unzip cdc-data*
+git clone https://github.com/riteshapatel/cdc-datapipeline.git cdc-datapipeline
 
 # download corenlp
-git clone https://github.com/riteshapatel/cdc-datapipeline.git cdc-datapipeline
+wget https://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip
 
 # unzip and set up corenlp for cdc datapipeline
 unzip stanford-corenlp* 
-mkdir cdc-datapipeline/parser/corenlp
 cp stanford-corenlp-full-2017-06-09/*.* cdc-datapipeline/parser/corenlp/
 
 # download semafor
