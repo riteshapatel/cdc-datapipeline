@@ -1,1 +1,2 @@
 psycopg2==2.7.3
+pycorenlp>=0.3.0

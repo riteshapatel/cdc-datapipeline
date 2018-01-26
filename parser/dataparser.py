@@ -127,7 +127,7 @@ class DataParser (object):
         # update curosr to persist JSON returned by semafor server. parsed array must be cast
         # as a JSONB during the update
         updcursor = self.conn.cursor()
-        updcursor.execute('UPDATE public.semafor_test SET parsed_json = CAST(%s as JSONB) WHERE postid=%s', (json.dumps(parsed), postid))
+        updcursor.execute('UPDATE public.post SET parsed_json = CAST(%s as JSONB) WHERE postid=%s', (json.dumps(parsed), postid))
         updated_rows = updcursor.rowcount 
         updcursor.close()
 
