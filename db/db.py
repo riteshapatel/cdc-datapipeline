@@ -1,3 +1,7 @@
+import psycopg2
+
+from utils.config import readConfig
+
 class Database (object):
     def __init__(self):
         self.params = readConfig(section='postgresql')
